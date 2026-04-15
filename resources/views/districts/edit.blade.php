@@ -1,4 +1,4 @@
-@extends('layouta.master')
+@extends('layouts.master')
 
 @section('content')
 

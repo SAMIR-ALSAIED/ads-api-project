@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\AdsController;
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\DistrictController;
 use App\Http\Controllers\Api\MesaageController;
@@ -23,14 +25,13 @@ Route::prefix('auth')->group(function () {
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/logout',[AuthController::class,'logout'])->middleware('auth:sanctum');
-
-
-
 });
 
 
 
 // settings
+
+Route::middleware('auth:sanctum')->group(function () {
 
 Route::prefix('settings')->group(function(){
     
@@ -76,3 +77,29 @@ Route::delete('/{message}',[MesaageController::class,'destroy']);
 
 
 
+Route::prefix('categories')->group(function(){
+
+Route::get('/',[CategoryController::class,'index']);
+   Route::put('/{category}', [CategoryController::class, 'store']); 
+   Route::delete('/{category}', [CategoryController::class, 'destroy']); 
+
+
+});
+
+
+// ads
+
+Route::prefix('ads')->group(function(){
+
+Route::get('/',[AdsController::class,'index']);
+Route::get('/latest',[AdsController::class,'latest']);
+Route::get('/search',[AdsController::class,'search']);
+Route::post('/create_ads',[AdsController::class,'createAds']);
+Route::put('/update_ads/{ads}',[AdsController::class,'updateAds']);
+Route::delete('/delete_ads/{ads}',[AdsController::class,'deleteAds']);
+
+
+
+});
+
+});

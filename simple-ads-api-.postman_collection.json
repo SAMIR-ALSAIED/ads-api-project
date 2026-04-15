@@ -8,11 +8,173 @@
   },
   "item": [
     {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "samir",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                },
+                {
+                  "key": "email",
+                  "value": "samir@gmail.com",
+                  "type": "text",
+                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678\n",
+                  "type": "text",
+                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/auth/register",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04",
+                  "disabled": true
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/auth/login",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "23|qmCyUvJnxKqGyAZXkuYrEqej1DzItqGo9Re7uEQt9755f51f",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/auth/logout",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "Settings",
       "item": [
         {
           "name": "Get All Settings",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "10|8M5BE8A410I9lWwz2YIt9MTC8YdUH17rCJTannV814b71a1f",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [
               {
@@ -415,10 +577,6 @@
               "response": []
             }
           ]
-        },
-        {
-          "name": "New Folder",
-          "item": []
         }
       ]
     },
@@ -571,127 +729,113 @@
       ]
     },
     {
-      "name": "Auth",
+      "name": "Categories",
       "item": [
         {
-          "name": "Register User",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "samir",
-                  "type": "text",
-                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
-                },
-                {
-                  "key": "email",
-                  "value": "samir@gmail.com",
-                  "type": "text",
-                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
-                },
-                {
-                  "key": "password",
-                  "value": "12345678\n",
-                  "type": "text",
-                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04"
-                },
-                {
-                  "key": "",
-                  "value": "",
-                  "type": "text",
-                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{url}}/api/auth/register",
-              "host": [
-                "{{url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "register"
-              ]
-            }
+          "name": "Get All Categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
           },
-          "response": []
-        },
-        {
-          "name": "Login User",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "samir",
-                  "type": "text",
-                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
-                },
-                {
-                  "key": "email",
-                  "value": "samir@gmail.com",
-                  "type": "text",
-                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
-                },
-                {
-                  "key": "password",
-                  "value": "12345678\n",
-                  "type": "text",
-                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04"
-                },
-                {
-                  "key": "",
-                  "value": "",
-                  "type": "text",
-                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{url}}/api/auth/login",
-              "host": [
-                "{{url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Logout User",
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "23|qmCyUvJnxKqGyAZXkuYrEqej1DzItqGo9Re7uEQt9755f51f",
+                  "value": "7|BaJijkefpFxF3grjkX6GZDykrsIxp7X7nWsHOyg80179b0bc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "80f6bfb3-ebad-433f-8a05-6b0eb72ff2ff"
+                },
+                {
+                  "key": "title",
+                  "value": "test ads title3",
+                  "type": "text",
+                  "uuid": "0251a18a-ae47-4d12-91f0-515d7fcc9347"
+                },
+                {
+                  "key": "description",
+                  "value": "test ads description",
+                  "type": "text",
+                  "uuid": "9ce0ea5f-33a6-434e-a882-19fc62400f99"
+                },
+                {
+                  "key": "phone",
+                  "value": "01225399195",
+                  "type": "text",
+                  "uuid": "23708749-fbe8-422f-a6c6-041eb07d7c78"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "8b01afb0-5a56-4129-8f6d-2b76f26c34fd"
+                },
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "76615853-a72e-4104-98ad-7f411392d81e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add New Categories",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/categories",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Categories",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "8|WdVvKDmslKxCZVjFXQXNlt48Pmb4K2WINHfi6IScc4c67033",
                   "type": "string"
                 }
               ]
@@ -704,15 +848,403 @@
                 "type": "text"
               }
             ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "FF",
+                  "type": "text",
+                  "uuid": "c78a6dab-a1a0-468f-9404-a9f5f89e5226"
+                },
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "75122d3b-cb0d-40d5-82a4-fabba2335c7c"
+                }
+              ]
+            },
             "url": {
-              "raw": "{{url}}/api/auth/logout",
+              "raw": "{{url}}/api/categories/5",
               "host": [
                 "{{url}}"
               ],
               "path": [
                 "api",
-                "auth",
-                "logout"
+                "categories",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Categories",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "8|WdVvKDmslKxCZVjFXQXNlt48Pmb4K2WINHfi6IScc4c67033",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/categories/3",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "categories",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ads",
+      "item": [
+        {
+          "name": "Get Ads With  pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/api/ads?page=1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Latest  Ads",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/api/ads/latest",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads",
+                "latest"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Ads",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/api/ads/search?search=شقة ",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "شقة "
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add New Ads",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "7|BaJijkefpFxF3grjkX6GZDykrsIxp7X7nWsHOyg80179b0bc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "80f6bfb3-ebad-433f-8a05-6b0eb72ff2ff"
+                },
+                {
+                  "key": "title",
+                  "value": "test ads title",
+                  "type": "text",
+                  "uuid": "0251a18a-ae47-4d12-91f0-515d7fcc9347"
+                },
+                {
+                  "key": "description",
+                  "value": "test ads description",
+                  "type": "text",
+                  "uuid": "9ce0ea5f-33a6-434e-a882-19fc62400f99"
+                },
+                {
+                  "key": "phone",
+                  "value": "01225399189",
+                  "type": "text",
+                  "uuid": "23708749-fbe8-422f-a6c6-041eb07d7c78"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "b700d6d2-5f7a-4134-a283-058f55f93425"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/ads/create_ads",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads",
+                "create_ads"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upadte Ads",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "7|BaJijkefpFxF3grjkX6GZDykrsIxp7X7nWsHOyg80179b0bc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "80f6bfb3-ebad-433f-8a05-6b0eb72ff2ff"
+                },
+                {
+                  "key": "title",
+                  "value": "test ads title3",
+                  "type": "text",
+                  "uuid": "0251a18a-ae47-4d12-91f0-515d7fcc9347"
+                },
+                {
+                  "key": "description",
+                  "value": "test ads description",
+                  "type": "text",
+                  "uuid": "9ce0ea5f-33a6-434e-a882-19fc62400f99"
+                },
+                {
+                  "key": "phone",
+                  "value": "01225399195",
+                  "type": "text",
+                  "uuid": "23708749-fbe8-422f-a6c6-041eb07d7c78"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "8b01afb0-5a56-4129-8f6d-2b76f26c34fd"
+                },
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "76615853-a72e-4104-98ad-7f411392d81e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/ads/update_ads/3",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads",
+                "update_ads",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete  Ads",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "7|BaJijkefpFxF3grjkX6GZDykrsIxp7X7nWsHOyg80179b0bc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "80f6bfb3-ebad-433f-8a05-6b0eb72ff2ff"
+                },
+                {
+                  "key": "title",
+                  "value": "test ads title3",
+                  "type": "text",
+                  "uuid": "0251a18a-ae47-4d12-91f0-515d7fcc9347"
+                },
+                {
+                  "key": "description",
+                  "value": "test ads description",
+                  "type": "text",
+                  "uuid": "9ce0ea5f-33a6-434e-a882-19fc62400f99"
+                },
+                {
+                  "key": "phone",
+                  "value": "01225399195",
+                  "type": "text",
+                  "uuid": "23708749-fbe8-422f-a6c6-041eb07d7c78"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "8b01afb0-5a56-4129-8f6d-2b76f26c34fd"
+                },
+                {
+                  "key": "_method",
+                  "value": "PUT",
+                  "type": "text",
+                  "uuid": "76615853-a72e-4104-98ad-7f411392d81e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/ads/delete_ads/3",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "ads",
+                "delete_ads",
+                "3"
               ]
             }
           },
