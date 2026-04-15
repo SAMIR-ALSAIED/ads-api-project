@@ -1,7 +1,6 @@
 # 🚀 Ads API Project (Laravel)
 
-A RESTful API built with Laravel for managing classified ads, including authentication, categories, messaging, and location-based features.
-
+Developed a RESTful Ads Management API using Laravel, including authentication, messaging system, search functionality, and location-based filtering.
 ---
 
 ## 📌 Features
